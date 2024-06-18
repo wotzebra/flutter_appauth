@@ -21,7 +21,7 @@
                                     additionalParameters:additionalParameters];
   UIViewController *rootViewController = [self rootViewController];
   if(exchangeCode) {
-      id<OIDExternalUserAgent> externalUserAgent = [self userAgentWithViewController:rootViewController useEphemeralSession:preferEphemeralSession];
+      id<OIDExternalUserAgent> externalUserAgent = [OIDExternalUserAgentIOSCustomBrowser CustomBrowserSafari];
       return [OIDAuthState authStateByPresentingAuthorizationRequest:request externalUserAgent:externalUserAgent callback:^(OIDAuthState *_Nullable authState,
                                                                                                                                                   NSError *_Nullable error) {
           if(authState) {
