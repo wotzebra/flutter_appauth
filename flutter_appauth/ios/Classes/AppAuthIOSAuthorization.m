@@ -32,7 +32,7 @@
           }
       }];
   } else {
-      id<OIDExternalUserAgent> externalUserAgent = [self userAgentWithViewController:rootViewController useEphemeralSession:preferEphemeralSession];
+      id<OIDExternalUserAgent> externalUserAgent = [OIDExternalUserAgentIOSCustomBrowser CustomBrowserSafari];
       return [OIDAuthorizationService presentAuthorizationRequest:request externalUserAgent:externalUserAgent callback:^(OIDAuthorizationResponse *_Nullable authorizationResponse, NSError *_Nullable error) {
           if(authorizationResponse) {
               NSMutableDictionary *processedResponse = [[NSMutableDictionary alloc] init];
